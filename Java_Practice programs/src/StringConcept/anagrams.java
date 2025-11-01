@@ -23,67 +23,58 @@ public class anagrams {
 
 		 */
 
-//		Scanner scanner = new Scanner(System.in);
-//
-//		System.out.println("Enter first string:");
-//		String str1 = scanner.nextLine();
-//
-//		System.out.println("Enter second string:");
-//		String str2 = scanner.nextLine();
-//		//Remove Spaces and changes the String to lowercase
-//
-//		str1=str1.replaceAll(" ", "").toLowerCase();
-//		str2=str2.replaceAll(" ", "").toLowerCase();
-//		
-//		if(str1.length()!=str2.length()) {
-//			throw new Exception("String mismatch");
-//		}
-//
-//		int count[]=new int[26];
-//		for (int i = 0; i < str1.length(); i++) {
-//			count[str1.charAt(i)-'a']++;
-//			count[str2.charAt(i)-'a']--;
-//			
-//		}
-//		
-//		boolean isAnagram=true;
-//		
-//		for(int i=0;i<count.length;i++) {
-//			if(count[i]!=0) {
-//				isAnagram=false;
-//				break;
-//			}
-//	
-//		}
-//		
-//		if(isAnagram) {
-//			System.out.println("isAnagram");
-//		}
-//		else
-//			System.out.println("Not an anagram");
+		
+		String str1 = "Listen";
+
+		String str2="selent";
+		
+
+		str1=str1.replaceAll(" ", "").toLowerCase();
+		str2=str2.replaceAll(" ", "").toLowerCase();
+		
+		if(str1.length()!=str2.length()) {
+			throw new Exception("String mismatch");
+		}
+
+		int count[]=new int[256];
+		for (int i = 0; i < str1.length(); i++) {
+			count[str1.charAt(i)]++;  
+			count[str2.charAt(i)]--;
+			
+		}
+		
+		/*🧠 Step-by-step table:
+		i	str1.charAt(i)	Index (- 'a')	  count[]++	  str2.charAt(i) Index (- 'a')	count[]--	      count[] after this step
+		
+		0	'l'	              11			count[11] = 1	's'				18			count[18] = -1      count[11]=1, count[18]=-1
+		1	'i'				   8			count[8] = 1	'e'				 4			count[4] = -1		count[8]=1, count[4]=-1
+		2	's'				  18	        count[18] = 0	'l'	            11	        count[11] = 0	    count[18]=0, count[11]=0
+		3	't'	              19			count[19] = 1	'e'				4			count[4] = -2		count[19]=1, count[4]=-2
+		4	'e'	               4			count[4] = -1	'n'				13			count[13] = -1		count[4]=-1, count[13]=-1
+		5	'n'	              13			count[13] = 0	't'				19			count[19] = 0		count[13]=0, count[19]=0 */
+		
+		boolean isAnagram=true;
+		
+		for(int i=0;i<count.length;i++) {
+			if(count[i]!=0) {
+				isAnagram=false;
+				break;
+			}
+	
+		}
+		
+		if(isAnagram) {
+			System.out.println("isAnagram");
+		}
+		else
+			System.out.println("Not an anagram");
 		
 		////Anagram with Arrays.sort method
 		
 		ArrayList<Character> list1=new ArrayList<Character>();
 		ArrayList<Character> list2=new ArrayList<Character>();
 		
-		        Scanner scanner = new Scanner(System.in);
-		
-		        System.out.println("Enter first string:");
-		        String str1 = scanner.nextLine();
-		
-		        System.out.println("Enter second string:");
-		        String str2 = scanner.nextLine();
-		      //Remove Spaces and changes the String to lowercase
-		        
-		        str1=str1.replaceAll(" ", "").toLowerCase();
-		        str2=str2.replaceAll(" ", "").toLowerCase();
-		        if(str1.length()!=str2.length()) {
-		        	throw new Exception("String mismatch");
-		        	}
-		        
-		        
-		        char[] arr1 = str1.toCharArray();
+				char[] arr1 = str1.toCharArray();
 		        char[] arr2 = str2.toCharArray();
 		        
 		        

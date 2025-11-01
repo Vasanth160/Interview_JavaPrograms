@@ -7,24 +7,23 @@ public class Combain_FirstLettoerOfEachString {
 
 		String[] split = text.split(" ");
 
-		int maxLength=0;
-
+		int maxlength=0;
+		
 		for (String word : split) {
-			if(word.length()>maxLength)
-				maxLength=word.length();
+			if(word.length()>maxlength)
+				maxlength=word.length();
 		}
-		System.out.println(maxLength);
-
-		for(int i=0;i<maxLength;i++) {
-			for (String result : split) {
-				if(i<result.length())
+	
+		for(int i=0;i<maxlength;i++) {
+			for(String result:split) {
+				if(i<result.length()) {
 					System.out.print(result.charAt(i));
+				}
 				else
 					System.out.print(" ");
 			}
 			System.out.println();
 		}
-
 	}
 
 }

@@ -11,42 +11,40 @@ import java.util.TreeMap;
 public class Count_theDuplicateCharacter_fromString {
 
 	public static void main(String[] args) {
-		//				Scanner sc=new Scanner(System.in);
-		//				System.out.println("Enter the String");
-		//				String name=sc.nextLine();
-
-		String name="aaabbcc";
-		char[] ca = name.toCharArray();
-//		LinkedHashMap<Character, Integer> result= new LinkedHashMap<Character, Integer>();
+//		String name="aaabbcc";
+//		char[] ca = name.toCharArray();
+//		LinkedHashMap<Character, Integer> mp=new LinkedHashMap<Character, Integer>();
 //		for (char c : ca) {
-//			if(result.containsKey(c)) {
-//				result.put(c, result.get(c)+1);
-//			}
+//			if(mp.containsKey(c))
+//				mp.put(c, mp.get(c)+1);
 //			else
-//				result.put(c, 1);
-//		}
-//		Set<Entry<Character, Integer>> entryset = result.entrySet();
-//		for (Entry<Character, Integer> entry : entryset) {
-//			if(entry.getValue()==1) {
-//				System.out.print(entry.getKey());
+//				mp.put(c, 1);
 //		}
 //		
-//		}		
+//		Set<Entry<Character, Integer>> entrySet = mp.entrySet();
+//		for (Entry<Character, Integer> entry : entrySet) {
+//			if(entry.getValue()>1)
+//				System.out.println(entry.getKey()+":"+entry.getValue());
+//		}
+		
+		
 		//Without using HashMap
 		String name1="VasanthMoorthy";
-		char[] ce = name.toCharArray();
+		char[] ce = name1.toCharArray();
 		int CharArray[]=new int[256];
 		for(char value:ce) 
 			CharArray[value]++;
 		
 		for(int i=0;i<CharArray.length;i++) {
-			if(CharArray[i]>=1)
+			if(CharArray[i]>1)
 				System.out.println((char)i+" "+CharArray[i]);
 
 
 		
 
-
+	}
+}
+}
 
 
 
@@ -92,7 +90,5 @@ public class Count_theDuplicateCharacter_fromString {
 			//				System.out.print(entry.getKey()+" ");		}
 
 
-		}
-	}
-}
+		
 
